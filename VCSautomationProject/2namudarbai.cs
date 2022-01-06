@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,39 +14,41 @@ namespace VCSautomationProject
     {
         private static IWebDriver _driver;
 
-        [OneTimeSetUp]
-        public void SetUp()
-        {
-            _driver = new ChromeDriver();
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            _driver.Manage().Window.Maximize();
-            _driver.Url = "https://developers.whatismybrowser.com/useragents/parse/?analyse-my-user-agent=yes#parse-useragent";
-        }
-
-        [OneTimeTearDown]
-        public void TearDown()
+        [TearDown]
+        public static void TearDown()
         {
             _driver.Close();
         }
 
-        [TestCase( true, TestName = "narsykleChrome")]
-        [TestCase( false, TestName = "narsykleNeFirefox")]
 
-        public static void Narsykle(bool operatingSystem, string result)
+        [TestCase("chrome", "Chrome", TestName = "Test Chrome Browser")]
+        [TestCase("firefox", "Firefox", TestName = "Test Firefox Browser")]
+        public static void TestBrowser(string browsertype, string expectedResult)
         {
-            
-            IWebElement intOperating = _driver.FindElement(By.Id("parse-controls"));
-            intOperating.Click();
-            IWebElement actualResult = _driver.FindElement(By.Id("primary-detection"));
-            if (operatingSystem)
+
+            switch (browsertype)
             {
-                intOperating.Click();
+                case "chrome":
+                    _driver = new ChromeDriver();
+                    break;
+                case "firefox":
+                    _driver = new FirefoxDriver();
+                    break;
             }
-            Assert.AreEqual("Chrome 96 on Windows 10", result);
 
+            SetUpWebPage();
 
-
+            IWebElement resultBlock = _driver.FindElement(By.CssSelector("#primary-detection"));
+            Assert.IsTrue(resultBlock.Text.Contains(expectedResult));
         }
+
+        private static void SetUpWebPage()
+        {
+            _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl("https://developers.whatismybrowser.com/useragents/parse/?analyse-my-user-agent=yes#parse-useragent");
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        }
+
 
 
 

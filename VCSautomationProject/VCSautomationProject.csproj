@@ -59,14 +59,21 @@
     <Compile Include="CheckBox.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="1namudarbai.cs" />
+    <Compile Include="Page\BasicCalculatorPage.cs" />
+    <Compile Include="Page\DemoqaNamuDarbaiPage.cs" />
+    <Compile Include="Page\DemoqaTextBoxPage.cs" />
     <Compile Include="pigult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="autoskaiciuotuvas.cs" />
+    <Compile Include="Tests\BasicCalculatorTest.cs" />
+    <Compile Include="Tests\DemoqaNamuDarbaiTests.cs" />
+    <Compile Include="Tests\DemoqaTextBoxTests.cs" />
     <Compile Include="TestWebDriver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

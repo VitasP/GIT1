@@ -13,8 +13,10 @@ namespace VCSautomationProject.Baigiamasis_darbas
         public static void CheckIfAddedToCart()
         {
             varleCartPage.NavigateToDefaultPage()
-                .InputSearch("Apple iPhone 13 Pro 128GB Grafito (Graphite)")
+                .AcceptCookies()
+                .InputSearch("Calvin Klein In2u for Women (Kvepalai Moterims) EDT 150ml")
                 .PressSearch()
+                .ToProduct()
                 .ToBasket()
                 .Continue()
                 .VerifyCart("1");

@@ -21,8 +21,7 @@ namespace VCSautomationProject.Tools
             Directory.CreateDirectory(screenshotFolder);
 
             string screenshotName = $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:HH_mm_ss}.png";
-            string screenshotPath = Path.Combine(screenshotName, screenshotName);
-
+            string screenshotPath = Path.Combine(screenshotFolder, screenshotName);
             screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
         }
     }

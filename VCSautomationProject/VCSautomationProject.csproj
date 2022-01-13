@@ -56,19 +56,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2namudarbai.cs" />
+    <Compile Include="Baigiamasis darbas\VarleBasePage.cs" />
+    <Compile Include="Baigiamasis darbas\VarleBaseTest.cs" />
+    <Compile Include="Baigiamasis darbas\VarleCartPage.cs" />
+    <Compile Include="Baigiamasis darbas\VarleCartTest.cs" />
+    <Compile Include="Baigiamasis darbas\VarleCommentPage.cs" />
+    <Compile Include="Baigiamasis darbas\VarleCommentTest.cs" />
+    <Compile Include="Baigiamasis darbas\VarleLoginPage.cs" />
+    <Compile Include="Baigiamasis darbas\VarlePage.cs" />
+    <Compile Include="Baigiamasis darbas\VarleLoginTest.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="1namudarbai.cs" />
+    <Compile Include="Drivers\Browsers.cs" />
+    <Compile Include="Drivers\CustomDriver.cs" />
+    <Compile Include="Page\AlertPage.cs" />
+    <Compile Include="Page\BasePage.cs" />
     <Compile Include="Page\BasicCalculatorPage.cs" />
-    <Compile Include="Page\DemoqaNamuDarbaiPage.cs" />
+    <Compile Include="Page\ND_3_Page.cs" />
+    <Compile Include="Page\DemoqaSelectMenuPage.cs" />
     <Compile Include="Page\DemoqaTextBoxPage.cs" />
+    <Compile Include="Page\SebCalculatorPage.cs" />
+    <Compile Include="Page\SenukaiPage.cs" />
     <Compile Include="pigult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="autoskaiciuotuvas.cs" />
+    <Compile Include="Tests\AlertTest.cs" />
+    <Compile Include="Tests\SebCalculatorTest.cs" />
+    <Compile Include="Tests\SenukaiTest.cs" />
+    <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\BasicCalculatorTest.cs" />
-    <Compile Include="Tests\DemoqaNamuDarbaiTests.cs" />
+    <Compile Include="Tests\ND_3_Test.cs" />
+    <Compile Include="Tests\DemoqaSelectMenuTest.cs" />
     <Compile Include="Tests\DemoqaTextBoxTests.cs" />
     <Compile Include="TestWebDriver.cs" />
+    <Compile Include="Tools\MyScreenshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -47,5 +47,7 @@ namespace VCSautomationProject
                 checkBox.Click();
             }
 
+        }
     }
 }
+
